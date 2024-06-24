@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Pembayaran - Pondok Pesantren</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images.jpeg" alt="Logo Pondok Pesantren">
+            <h1>Pondok Pesantren</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="index.html#work">Kegiatan</a></li>
+                <li><a href="about.html">Tentang Kami</a></li>
+            </ul>
+        </nav>
+        <div class="search">
+            <input type="text" placeholder="Cari...">
+            <button type="button">&#128269;</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="payment-form">
+            <h2>Formulir Pembayaran</h2>
+            <p>Silakan isi formulir pembayaran untuk kegiatan yang Anda pilih:</p>
+            
+            <div id="selected-activity">
+                <!-- Konten kegiatan yang dipilih akan dimasukkan di sini menggunakan JavaScript -->
+            </div>
+
+            <!-- Formulir pembayaran -->
+            <form id="payment-form">
+                <!-- Contoh input untuk nama -->
+                <div>
+                    <label for="nama">Nama:</label>
+                    <input type="text" id="nama" name="nama" required>
+                </div>
+
+                <!-- Contoh input untuk email -->
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <!-- Pilihan metode pembayaran -->
+                <div>
+                    <label for="metode-pembayaran">Metode Pembayaran:</label>
+                    <select id="metode-pembayaran" name="metode-pembayaran" required>
+                        <option value="bni">BNI</option>
+                        <option value="bri">BRI</option>
+                        <option value="bca">BCA</option>
+                        <option value="mandiri">Mandiri</option>
+                    </select>
+                </div>
+
+                <!-- Tombol submit -->
+                <div>
+                    <button type="submit">Bayar Sekarang</button>
+                </div>
+            </form>
+
+            <!-- Kode pembayaran yang ditampilkan setelah submit -->
+            <div id="kode-pembayaran" style="display: none; margin-top: 20px;">
+                <h3>Kode Pembayaran:</h3>
+                <p><span id="kode-pembayaran-text"></span></p>
+            </div>
+        </section>
+    </main>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Fungsi untuk mendapatkan parameter dari URL
+            function getUrlParameter(name) {
+                name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+                var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+                var results = regex.exec(location.search);
+                return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+            };
+
+            // Daftar kegiatan beserta informasi detailnya
+            var activities = [
+                {
+                    name: "Upacara Pembukaan",
+                    date: "1 Januari 2024",
+                    description: "Upacara pembukaan semester baru dengan berbagai kegiatan menarik.",
+                    cost: 200000 // Ubah format biaya ke dalam angka untuk memudahkan pengaturan nilai input
+                },
+                {
+                    name: "Kegiatan Bakti Sosial",
+                    date: "10 Februari 2024",
+                    description: "Kegiatan bakti sosial di desa sekitar sekolah.",
+                    cost: 0 // Gratis
+                },
+                {
+                    name: "Lomba Seni dan Budaya",
+                    date: "20 Maret 2024",
+                    description: "Lomba seni dan budaya antar siswa.",
+                    cost: 150000
+                }
+                // Anda bisa menambahkan kegiatan lain sesuai kebutuhan
+            ];
+
+            // Mendapatkan nilai parameter kegiatan dari URL
+            var selectedActivity = getUrlParameter('kegiatan');
+
+            // Temukan data kegiatan yang sesuai dengan parameter yang diterima
+            var selectedData = activities.find(function(activity) {
+                return activity.name.toLowerCase().replace(/\s/g, '-') === selectedActivity;
+            });
+
+            // Jika data kegiatan yang dipilih ditemukan, tampilkan informasinya
+            if (selectedData) {
+                var selectedActivityContainer = document.getElementById('selected-activity');
+
+                var activityHTML = `
+                    <div class="selected-activity">
+                        <h3>${selectedData.name}</h3>
+                        <p>Tanggal: ${selectedData.date}</p>
+                        <p>Deskripsi: ${selectedData.description}</p>
+                        <p>Biaya: Rp ${selectedData.cost.toLocaleString('id-ID')}</p>
+                    </div>
+                `;
+
+                selectedActivityContainer.innerHTML = activityHTML;
+
+                // Fungsi untuk menangani submit form pembayaran
+                var paymentForm = document.getElementById('payment-form');
+                paymentForm.addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    
+                    // Mengambil metode pembayaran yang dipilih
+                    var metodePembayaran = document.getElementById('metode-pembayaran').value;
+
+                    // Buat kode pembayaran berdasarkan metode pembayaran yang dipilih
+                    var kodePembayaran;
+                    switch(metodePembayaran) {
+                        case 'bni':
+                            kodePembayaran = 'BNI123456';
+                            break;
+                        case 'bri':
+                            kodePembayaran = 'BRI123456';
+                            break;
+                        case 'bca':
+                            kodePembayaran = 'BCA123456';
+                            break;
+                        case 'mandiri':
+                            kodePembayaran = 'MND123456';
+                            break;
+                        default:
+                            kodePembayaran = 'UNKNOWN';
+                    }
+
+                    // Tampilkan kode pembayaran
+                    var kodePembayaranText = document.getElementById('kode-pembayaran-text');
+                    kodePembayaranText.textContent = kodePembayaran;
+
+                    var kodePembayaranContainer = document.getElementById('kode-pembayaran');
+                    kodePembayaranContainer.style.display = 'block';
+
+                    alert('Formulir pembayaran berhasil dikirim! Kode Pembayaran Anda: ' + kodePembayaran);
+                });
+            } else {
+                // Handle jika tidak ada kegiatan yang cocok dengan parameter yang diberikan
+                var noActivityHTML = `
+                    <p>Maaf, kegiatan tidak ditemukan.</p>
+                `;
+                selectedActivityContainer.innerHTML = noActivityHTML;
+            }
+        });
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,743 @@
+/* Reset default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #52b45c;
+    color: white;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #111;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+.logo h1 {
+    font-size: 24px;
+    font-weight: normal;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+}
+
+.search input {
+    padding: 5px;
+    border: none;
+    border-radius: 3px;
+}
+
+.search button {
+    padding: 5px 10px;
+    background-color: #333;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.search button:hover {
+    background-color: #555;
+}
+
+main {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.services h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.service-categories {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.service-categories a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.service-categories .active {
+    color: #e6007e; /* Highlight active link */
+}
+
+.service-categories a:hover {
+    color: #e6007e;
+}
+
+.service-details {
+    margin-top: 30px; /* Memberi jarak dari service-categories */
+    text-align: left; /* Ensuring the text-align property for left alignment */
+}
+
+.service-details h3 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.service-details p {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Footer styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Banner Styles */
+.banner {
+    background-image: url('banner-image.jpg'); /* Ganti dengan URL gambar banner yang diinginkan */
+    background-size: cover;
+    background-position: center;
+    padding: 100px 20px;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Overlay gelap */
+    z-index: 1;
+}
+
+.banner h2,
+.banner p,
+.banner .MYPROFIL {
+    position: relative;
+    z-index: 2;
+}
+
+.banner h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.banner p {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.banner .MYPROFIL {
+    padding: 10px 20px;
+    font-size: 18px;
+    color: white;
+    background-color: #e6007e; /* Warna tombol */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.banner .MYPROFIL:hover {
+    background-color: #ff4081;
+}
+
+/* Styles for tables */
+.table-jurusan,
+.table-kelas,
+.table-pendaftaran,
+.table-kegiatan {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px; /* Jarak dari elemen sebelumnya */
+}
+
+.table-jurusan th,
+.table-jurusan td,
+.table-kelas th,
+.table-kelas td,
+.table-pendaftaran th,
+.table-pendaftaran td,
+.table-kegiatan th,
+.table-kegiatan td {
+    padding: 10px;
+    border: 1px solid #dddddd;
+    text-align: left;
+}
+
+.table-pendaftaran th,
+.table-kegiatan th {
+    background-color: #20cd5a; /* Warna latar header */
+    color: white;
+}
+
+.table-pendaftaran td ul {
+    margin: 0;
+    padding: 0;
+}
+
+.table-pendaftaran td ul li {
+    list-style-type: none;
+    margin-bottom: 5px;
+}
+
+/* Gaya untuk tabel pendaftaran */
+.table-pendaftaran {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.table-pendaftaran th, .table-pendaftaran td {
+    padding: 10px;
+    border: 1px solid #dddddd;
+    text-align: left;
+}
+
+.table-pendaftaran th {
+    background-color: #20cd5a;
+    text-align: left;
+    color: white;
+}
+
+.table-pendaftaran td ul {
+    margin: 0;
+    padding: 0;
+}
+
+.table-pendaftaran td ul li {
+    list-style-type: none;
+    margin-bottom: 5px;
+}
+
+/* Right alignment for requirements */
+.requirements {
+    text-align: right;
+}
+
+.requirements h4 {
+    text-align: left; /* Keeping the headers aligned to the left */
+}
+
+.requirements ul {
+    text-align: left; /* Keeping the list items aligned to the left */
+}
+
+.apply-now {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: white;
+    background-color: #e6007e; /* Warna tombol */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.apply-now:hover {
+    background-color: #ff4081;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 500px;
+    margin: 0 auto;
+    gap: 15px;
+}
+
+form label {
+    font-weight: bold;
+}
+
+form input, form select, form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form input[type="submit"] {
+    width: auto;
+    background-color: #e6007e;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 10px 20px;
+    text-transform: uppercase;
+}
+
+form input[type="submit"]:hover {
+    background-color: #ff4081;
+}
+
+/* styles.css */
+
+.about-us {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.about-us h2 {
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.vision-mission-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.vision, .mission {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.vision h2, .mission h2 {
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.vision p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.mission ul {
+    color: #666;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.facilities {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.facility {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.facility img {
+    width: 100%;
+    height: 150px; /* Set height for consistent size */
+    object-fit: cover; /* Ensure images cover the entire container */
+    border-radius: 5px 5px 0 0; /* Rounded corners on top */
+}
+
+.facility-content {
+    text-align: center;
+}
+
+.facility h3 {
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.facility p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.admission {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.admission h2 {
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.admission p {
+    color: #666;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.admission ul {
+    color: #666;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-left: 20px;
+    text-align: left;
+}
+
+
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .facilities .facility {
+        width: 100%;
+    }
+}
+
+.activities-payment {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.activities-payment h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.activity {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #87e17fbd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.activity h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.activity p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.activity button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.activity button:hover {
+    background-color: #555;
+}
+
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .search {
+        margin-top: 10px;
+    }
+
+    nav ul {
+        margin-top: 10px;
+        justify-content: center;
+    }
+
+    nav ul li {
+        margin-right: 10px;
+    }
+}
+
+/* CSS for Centering Content */
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.payment-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto; /* Meratakan formulir ke tengah secara horizontal */
+    text-align: center;
+    color: black; /* Teks dalam formulir pembayaran menjadi hitam */
+}
+
+
+.payment-form h2 {
+    color: black; /* Teks heading dalam formulir pembayaran menjadi hitam */
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.payment-form p {
+    color: black; /* Teks paragraf dalam formulir pembayaran menjadi hitam */
+    margin-bottom: 20px;
+}
+
+.selected-activity {
+    border: 1px solid #b90606;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.selected-activity h3 {
+    color: black; /* Teks heading dalam kegiatan yang dipilih menjadi hitam */
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.selected-activity p {
+    color: black; /* Teks paragraf dalam kegiatan yang dipilih menjadi hitam */
+    margin-bottom: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Meratakan elemen secara horizontal ke tengah */
+    justify-content: center; /* Meratakan elemen secara vertikal ke tengah */
+    gap: 1px; /* Jarak antara elemen-elemen dalam formulir */
+    text-align: center; /* Mengatur teks ke kiri */
+}
+
+
+form label {
+    font-weight: bold;
+    color: black; /* Teks label form menjadi hitam */
+}
+
+form input, form select, form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #b8b8b8;
+    border-radius: 5px;
+    color: black; /* Teks dalam input form menjadi hitam */
+}
+
+form button[type="submit"] {
+    background-color: #ffc107;
+    border: none;
+    color: black; /* Teks tombol submit menjadi hitam */
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+
+form button[type="submit"]:hover {
+    background-color: #ffca28;
+}
+
+.main {
+    max-width: 960px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.profil {
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profil h2 {
+    margin-top: 0;
+    font-size: 24px;
+}
+
+.profil-details {
+    margin-top: 20px;
+}
+
+.profil-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.profil-table td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    color: #333; /* Warna teks hitam */
+}
+
+.profil-table td:first-child {
+    font-weight: bold;
+    width: 150px;
+    background-color: #f0f0f0;
+}
+
+.profil-image {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profil-image img {
+    width: 350px;
+    height: 300px;
+    object-fit: cover; /* Untuk memastikan gambar diisi ke dalam lingkaran */
+    border-radius: 50%; /* Untuk membuat lingkaran */
+    border: 3px solid #ccc;
+}
+
+.profil-image input[type="file"] {
+    display: none;
+}
+
+.profil-image label {
+    cursor: pointer;
+    color: #007bff;
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+}
+
+.cek-nilai {
+    text-align: center; /* Mengatur teks dan konten di tengah */
+    margin-top: 20px; /* Jarak atas dari section */
+}
+
+.cek-nilai button {
+    padding: 10px 20px; /* Atur padding tombol */
+    font-size: 16px; /* Ukuran font */
+    background-color: #4CAF50; /* Warna latar */
+    color: white; /* Warna teks */
+    border: none; /* Tanpa border */
+    cursor: pointer; /* Kursor pointer saat hover */
+    border-radius: 4px; /* Membuat sudut bulat */
+}
+
+.cek-nilai button:hover {
+    background-color: #45a049; /* Warna latar hover */
+}
+
+.main {
+    padding: 20px; /* Padding dalam main content */
+    text-align: center; /* Teks rata tengah dalam main content */
+}
+
+.rapot-table {
+    width: 100%; /* Lebar tabel 100% dari container */
+    border-collapse: collapse; /* Menggabungkan garis antar sel */
+    margin-top: 20px; /* Jarak atas tabel */
+    background-color: #fff; /* Warna latar belakang tabel */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow efek pada tabel */
+}
+
+.rapot-table th, .rapot-table td {
+    border: 1px solid #ddd; /* Garis tepi untuk th dan td */
+    padding: 12px; /* Padding dalam th dan td */
+    color: #333;
+}
+
+.rapot-table th {
+    background-color: #4CAF50; /* Warna latar header kolom */
+    color: rgb(0, 0, 0); /* Warna teks header kolom */
+    text-align: center; /* Teks rata kiri dalam header kolom */
+}
+
+.rapot-table tr:nth-child(even) {
+    background-color: #f2f2f2; /* Warna latar setiap baris genap */
+}
+
+.rapot-table tr:hover {
+    background-color: #ddd; /* Warna latar saat baris dihover */
+}
+
+.rapot {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.rapot h2 {
+    margin-bottom: 20px;
+}
+
+.btn-back {
+    background-color: #c9ef8c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.btn-back:hover {
+    background-color: #45a049;
+}
+

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pondok Pesantren</title>
+    <!-- Link ke file CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="images.jpeg" alt="Pondok Pesantren Logo">
+            <h1>Pondok Pesantren</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="kegiatan.html">Kegiatan</a></li>
+                <li><a href="aboutus.html">Tentang Kami</a></li>
+            </ul>
+        </nav>
+        <div class="search">
+            <input type="text" id="searchInput" placeholder="Search...">
+            <button type="button" onclick="search()">Search</button>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main>
+        <!-- Banner Section -->
+        <section class="banner">
+            <h2>Welcome To <br> KHAIRUL UMMAH SYAHRONI</h2>
+            <p>Belajar dengan akhlak yang mulia dan kesungguhan yang istiqomah.</p>
+            <button onclick="window.location.href='profil.html'" class="MYPROFIL">MY PROFIL</button>
+        </section>
+
+        <section class="services">
+            <h2>Information</h2>
+            <div class="service-categories">
+                <a href="#jurusan">Jurusan</a>
+                <a href="#kelas">Kelas</a>
+                <a href="#pendaftaran" class="active">Pendaftaran</a>
+                <a href="#kegiatan">Kegiatan</a>
+            </div>
+
+            <div class="service-details" id="jurusan-details" style="display: none;">
+                <h3>Jurusan</h3>
+                <table class="table-jurusan">
+                    <thead>
+                        <tr>
+                            <th>Nama Jurusan</th>
+                            <th>Deskripsi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Tahfiz Quran</td>
+                            <td>Jurusan untuk mempelajari dan menghafal Al-Quran.</td>
+                        </tr>
+                        <tr>
+                            <td>Ilmu Pengetahuan Alam</td>
+                            <td>Jurusan untuk mempelajari ilmu pengetahuan alam seperti fisika, kimia, dan biologi.</td>
+                        </tr>
+                        <tr>
+                            <td>Informatika</td>
+                            <td>Jurusan untuk mempelajari ilmu komputer dan teknologi informasi.</td>
+                        </tr>
+                        <tr>
+                            <td>Ilmu Pengetahuan Sosial</td>
+                            <td>Jurusan untuk mempelajari ilmu sosial seperti sosiologi, ekonomi, dan sejarah.</td>
+                        </tr>
+                        <!-- Tambahkan jurusan lain sesuai kebutuhan -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="service-details" id="kelas-details" style="display: none;">
+                <h3>Kelas</h3>
+                <table class="table-kelas">
+                    <thead>
+                        <tr>
+                            <th>Kelas</th>
+                            <th>Detail</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowspan="2">7</td>
+                            <td>7,1</td>
+                        </tr>
+                        <tr>
+                            <td>7,2</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2">8</td>
+                            <td>8,1</td>
+                        </tr>
+                        <tr>
+                            <td>8,2</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="service-details" id="pendaftaran-details" style="display: block;">
+                <h3>Pendaftaran</h3>
+                <table class="table-pendaftaran">
+                    <thead>
+                        <tr>
+                            <th>Jenjang</th>
+                            <th>Syarat Pendaftaran</th>
+                            <th>Biaya Pendidikan</th>
+                            <th>Kepala Sekolah</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>MTS</td>
+                            <td>
+                                <ul>
+                                    <li>Memiliki ijazah SD/sederajat.</li>
+                                    <li>Sehat jasmani dan rohani.</li>
+                                    <li>Hubungi.</li>
+                                </ul>
+                            </td>
+                            <td>
+                                Biaya pendaftaran dan biaya pendidikan dapat bervariasi tergantung pada jalur penerimaan dan jenis sekolah. Silakan hubungi sekolah untuk informasi lebih lanjut tentang biaya MTS.
+                            </td>
+                            <td>
+                                Wahyudin<br> 088273827322
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>MA</td>
+                            <td>
+                                <ul>
+                                    <li>Memiliki ijazah SMP/sederajat.</li>
+                                    <li>Sehat jasmani dan rohani.</li>
+                                    <li>Melampirkan fotokopi KTP orang tua/wali.</li>
+                                </ul>
+                            </td>
+                            <td>
+                                Biaya pendaftaran dan biaya pendidikan dapat bervariasi tergantung pada jalur penerimaan dan jenis sekolah. Silakan hubungi sekolah untuk informasi lebih lanjut tentang biaya MA.
+                            </td>
+                            <td>
+                                Swi Novitasari<br> 088273827322
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+                <!-- General and Additional Requirements -->
+                <div class="requirements">
+                    <h4>Syarat Umum:</h4>
+                    <ul>
+                        <li>- Siswa yang mendaftar harus Warga Negara Indonesia (WNI).</li><br>
+                        <li>- Siswa berusia sesuai dengan jenjang pendidikan yang dituju.</li><br>
+                        <li>- Siswa tidak pernah diberhentikan dengan tidak hormat dari sekolah sebelumnya.</li><br>
+                        <li>- Siswa yang memiliki surat keterangan lulus dari sekolah sebelumnya (untuk jenjang SD, SMP, dan SMA/SMK).</li><br>
+                        <li>- Siswa yang memiliki ijazah atau surat keterangan tamat belajar (untuk jenjang SMA/SMK).</li><br>
+                        <li>- Siswa yang memiliki akta kelahiran asli.</li><br>
+                        <li>- Siswa yang memiliki kartu keluarga (KK) asli.</li><br>
+                        <li>- Siswa yang memiliki surat pindah domisili (jika pindah dari luar daerah).</li><br>
+                    </ul>
+                    <br>
+                    <br>
+                    <h4>Persyaratan Berkas:</h4>
+                    <ul>
+                        <li>- Scan akta kelahiran</li><br>
+                        <li>- Scan kartu keluarga (KK)</li><br>
+                        <li>- Scan ijazah atau surat keterangan tamat belajar (untuk jenjang SMA/SMK)</li><br>
+                        <li>- Scan surat keterangan lulus dari sekolah sebelumnya (untuk jenjang SD, SMP, dan SMA/SMK)</li><br>
+                        <li>- Scan surat pindah domisili (jika pindah dari luar daerah)</li><br>
+                        <li>- Scan pas foto terbaru</li><br>
+                        <li>- Scan bukti prestasi (jika ada)</li><br>
+                        <li>- Scan surat keterangan tidak mampu (jika ada)</li><br>
+                    </ul>
+                </div>
+                <a href="formulir.html"><button class="apply-now">Formulir Pendaftaran</button></a>
+            </div>
+            </div>
+
+            <div class="service-details" id="kegiatan-details" style="display: none;">
+                <h3>Kegiatan</h3>
+                <table class="table-kegiatan">
+                    <tbody>
+                        <tr>
+                            <td>1 Januari 2024</td>
+                            <td><img src="jumat-zikiran.jpg" alt="Kegiatan 1" width="100"></td>
+                            <td>Upacara pembukaan semester baru dengan berbagai kegiatan menarik.</td>
+                        </tr>
+                        <tr>
+                            <td>10 Februari 2024</td>
+                            <td><img src="images/kegiatan2.jpeg" alt="Kegiatan 2" width="100"></td>
+                            <td>Kegiatan bakti sosial di desa sekitar sekolah.</td>
+                        </tr>
+                        <tr>
+                            <td>20 Maret 2024</td>
+                            <td><img src="images/kegiatan3.jpeg" alt="Kegiatan 3" width="100"></td>
+                            <td>Lomba seni dan budaya antar siswa.</td>
+                        </tr>
+                        <!-- Tambahkan kegiatan lain sesuai kebutuhan -->
+                    </tbody>
+                </table>
+            </div>
+            <script>
+                function search() {
+                    // Ambil nilai input pencarian
+                    var query = document.getElementById('searchInput').value.trim().toLowerCase();
+            
+                    // Array kata kunci yang akan diarahkan ke formulir.html
+                    var keywords = [
+                        "formulir pendaftaran ",
+                        "pendaftaran pondok pesantren",
+                        "formulir"
+                    ];
+            
+                    // Cek apakah nilai pencarian termasuk dalam array kata kunci
+                    if (keywords.includes(query)) {
+                        // Redirect ke halaman formulir.html
+                        window.location.href = 'formulir.html';
+                    } else {
+                        // Handle jika kata kunci pencarian tidak cocok (opsional)
+                        alert('Pencarian tidak ditemukan.');
+                    }
+                }
+            
+                // Tambahkan event listener untuk melakukan pencarian saat tekan tombol Enter pada keyboard
+                document.getElementById('searchInput').addEventListener('keyup', function(event) {
+                    if (event.key === 'Enter') {
+                        search();
+                    }
+                });
+            </script>            
+        
+    </main>
+    <!-- Link ke file JavaScript -->
+    <script src="scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasil Formulir Pendaftaran</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* CSS untuk styling yang telah diberikan sebelumnya */
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Header dengan logo dan navigasi -->
+    </header>
+    <main>
+            <div class="result-details">
+                <!-- Detail hasil formulir yang ditampilkan dalam bentuk tabel -->
+            </div>
+            <p id="confirmation-message"><h2>Data Anda sudah dikirim.</h2></p><br>
+            <div class="feedback-section">
+                <h3>Berikan Feedback Anda</h3>
+                <form action="index.html" method="get">
+                    <textarea id="feedback" name="feedback" rows="4" placeholder="Ketikkan feedback Anda..."></textarea>
+                    <button type="submit">Kirim</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Ambil nilai dari URL query string
+        const urlParams = new URLSearchParams(window.location.search);
+        
+        // Tampilkan hasil dari query string ke elemen yang sesuai di halaman
+        document.getElementById('result-name').textContent = urlParams.get('name');
+        document.getElementById('result-dob').textContent = urlParams.get('dob');
+        document.getElementById('result-gender').textContent = urlParams.get('gender');
+        document.getElementById('result-address').textContent = urlParams.get('address');
+        document.getElementById('result-phone').textContent = urlParams.get('phone');
+        document.getElementById('result-email').textContent = urlParams.get('email');
+        document.getElementById('result-school').textContent = urlParams.get('school');
+        document.getElementById('result-program').textContent = urlParams.get('program');
+
+        // Tampilkan daftar dokumen yang diunggah
+        const documentsList = urlParams.getAll('documents');
+        const documentsListElement = document.getElementById('result-documents');
+        documentsList.forEach(document => {
+            const li = document.createElement('li');
+            li.textContent = document;
+            documentsListElement.appendChild(li);
+        });
+
+        // Menghapus pesan konfirmasi setelah beberapa detik
+        setTimeout(function() {
+            document.getElementById('confirmation-message').style.display = 'none';
+        }, 3000);
+    </script>
+</body>
+</html>

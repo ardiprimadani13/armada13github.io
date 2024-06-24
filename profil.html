@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Siswa - Pondok Pesantren</title>
+    <!-- Link ke file CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="images.jpeg" alt="Pondok Pesantren Logo">
+            <h1>Pondok Pesantren</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="kegiatan.html">Kegiatan</a></li>
+                <li><a href="aboutus.html">Tentang Kami</a></li>
+            </ul>
+        </nav>
+        <div class="search">
+            <input type="text" placeholder="Search...">
+            <button type="button">&#128269;</button>
+        </div>
+    </header>
+    
+    
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Profil Section -->
+        <section class="profil">
+            <h2>Profil Siswa</h2>
+            <div class="profil-details">
+                <div class="profil-image">
+                    <img id="preview-image" src="profil.jpg" alt="Preview Image">
+                    <input type="file" id="upload-image" accept="image/*" onchange="previewImage(event)">
+                    <label for="upload-image">Pilih Foto Profil</label>
+                </div>
+                <table class="profil-table">
+                    <tr>
+                        <td><strong>Nama:</strong></td>
+                        <td>cha eun woo</td>
+                    </tr>
+                    <tr>
+                        <td><strong>NIS:</strong></td>
+                        <td>1234567890</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Kelas:</strong></td>
+                        <td>8,1</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Jurusan:</strong></td>
+                        <td>Ilmu Pengetahuan Alam</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Email:</strong></td>
+                        <td>chaeunwoo@gmail.com</td>
+                    </tr>
+                    <tr>
+                        <td><strong>rangking:</strong></td>
+                        <td id="rangking">1</td>
+                    </tr>
+                </table>
+                <section class="cek-nilai">
+                    <button onclick="location.href='rapot.html'">Cek Nilai</button>
+                </section>
+            </div>
+        </section>
+        <!-- Tombol Cek Nilai -->
+        
+    </main><br>
+    
+    <!-- Link ke file JavaScript -->
+    <script src="scripts.js"></script>
+</body>
+</html>
